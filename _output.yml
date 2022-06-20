@@ -5,7 +5,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">R en Ciències Socials</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicat amb Bookdown</a></li>
     edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:

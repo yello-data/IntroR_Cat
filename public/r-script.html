@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ca" xml:lang="ca">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.5 Script | R en Ciències Socials</title>
+  <meta name="description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.5 Script | R en Ciències Socials" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.5 Script | R en Ciències Socials" />
+  
+  <meta name="twitter:description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  
+
+<meta name="author" content="Jordi Mas Elias" />
+
+
+<meta name="date" content="2022-06-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="starwars.html"/>
+<link rel="next" href="objects.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R en Ciències Socials</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefaci</a></li>
+<li class="chapter" data-level="1" data-path="guiarstudio.html"><a href="guiarstudio.html"><i class="fa fa-check"></i><b>1</b> Guia d’RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>1.1</b> Instal·lació</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="install.html"><a href="install.html#install-r"><i class="fa fa-check"></i><b>1.1.1</b> Instal·lació d’R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="install.html"><a href="install.html#install-rstudio"><i class="fa fa-check"></i><b>1.1.2</b> Instal·lació d’RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="navigate.html"><a href="navigate.html"><i class="fa fa-check"></i><b>1.2</b> Orientació a RStudio</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="navigate.html"><a href="navigate.html#create-project"><i class="fa fa-check"></i><b>1.2.1</b> Crear un projecte</a></li>
+<li class="chapter" data-level="1.2.2" data-path="navigate.html"><a href="navigate.html#create-script"><i class="fa fa-check"></i><b>1.2.2</b> Crear un Script</a></li>
+<li class="chapter" data-level="1.2.3" data-path="navigate.html"><a href="navigate.html#four-windows"><i class="fa fa-check"></i><b>1.2.3</b> Les quatre finestres</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.3</b> Paquets</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="packages.html"><a href="packages.html#els-paquets-de-sèrie"><i class="fa fa-check"></i><b>1.3.1</b> Els paquets de sèrie</a></li>
+<li class="chapter" data-level="1.3.2" data-path="packages.html"><a href="packages.html#new-packages"><i class="fa fa-check"></i><b>1.3.2</b> Instal·lació de nous paquets</a></li>
+<li class="chapter" data-level="1.3.3" data-path="packages.html"><a href="packages.html#load-packages"><i class="fa fa-check"></i><b>1.3.3</b> Càrrega de paquets</a></li>
+<li class="chapter" data-level="1.3.4" data-path="packages.html"><a href="packages.html#open-packages"><i class="fa fa-check"></i><b>1.3.4</b> Obertura d’un paquet</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="starwars.html"><a href="starwars.html"><i class="fa fa-check"></i><b>1.4</b> L’objecte Star Wars</a></li>
+<li class="chapter" data-level="1.5" data-path="r-script.html"><a href="r-script.html"><i class="fa fa-check"></i><b>1.5</b> <em>Script</em></a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="r-script.html"><a href="r-script.html#order-script"><i class="fa fa-check"></i><b>1.5.1</b> Ordenació de l’<em>script</em></a></li>
+<li class="chapter" data-level="1.5.2" data-path="r-script.html"><a href="r-script.html#script-rules"><i class="fa fa-check"></i><b>1.5.2</b> Regles bàsiques de l’<em>script</em></a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="objects.html"><a href="objects.html"><i class="fa fa-check"></i><b>1.6</b> Els objectes</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="objects.html"><a href="objects.html#create-objects"><i class="fa fa-check"></i><b>1.6.1</b> Crear objectes</a></li>
+<li class="chapter" data-level="1.6.2" data-path="objects.html"><a href="objects.html#consulta-reproducció-i-eliminació-dobjectes"><i class="fa fa-check"></i><b>1.6.2</b> Consulta, reproducció i eliminació d’objectes</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="import-files.html"><a href="import-files.html"><i class="fa fa-check"></i><b>1.7</b> Importar arxius</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="import-files.html"><a href="import-files.html#import-files-web"><i class="fa fa-check"></i><b>1.7.1</b> Importar des d’una web</a></li>
+<li class="chapter" data-level="1.7.2" data-path="import-files.html"><a href="import-files.html#import-files-wd"><i class="fa fa-check"></i><b>1.7.2</b> Importació des del directori de treball</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>1.8</b> Resum</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referències.html"><a href="referències.html"><i class="fa fa-check"></i>Referències</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R en Ciències Socials</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-script" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> <em>Script</em><a href="r-script.html#r-script" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Hem fet moltes coses fins ara. Si haguéssim de tornar-les a reproduir una per una, seria molt feixuc teclejar tot el codi de nou a la consola. Per sort, l’<strong><em>script</em></strong> ens evita haver de tornar a escriure totes les operacions, ja que ens serveix per anotar-hi les nostres indicacions, transmetre-les a R i reproduir-les sempre que vulguem en un moment.</p>
+<div id="order-script" class="section level3 hasAnchor" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> Ordenació de l’<em>script</em><a href="r-script.html#order-script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>L’<em>script</em> ens ajuda a ordenar els passos que anem fent amb R. El més adequat és ordenar-nos l’<em>script</em> seguint una estructura que ens permeti entendre fàcilment el que estem fent (i que pugui entendre també qui llegeixi el nostre <em>script</em>). Aquí tenim dos exemples de <em>scripts</em>:</p>
+<ul>
+<li><a href="https://github.com/yello-data/FIIEI_UOC/blob/main/2022/russia_un.R">Estats amb vot similar a Rússia a l’Assemblea General de l’ONU</a></li>
+<li><a href="https://github.com/yello-data/covid19/blob/master/covid19.R">Visualització de casos de Covid-19 a Espanya</a></li>
+</ul>
+<p>Una de les eines més útils que té l’<em>script</em> és el <strong>símbol #</strong> (coixinet), que serveix tant per posar títols com per desactivar la resta d’informació que hi hagi a la dreta en la mateixa línia d’ordres. El coixinet també es pot utilitzar a la consola, però ens serà de molta més utilitat a l’<em>script</em>.</p>
+<p>Per reproduir el codi que tinguem a l’<em>script</em>, haurem de situar el cursor a la línia de codi que vulguem reproduir i teclejar <strong>Ctrl+Enter</strong>.</p>
+<div class="alert alert-info">
+<p><strong>Pas 11. Utilitza l’<em>script</em>:</strong> Per començar a utilitzar l’<em>script</em>, fes el següent:</p>
+<ul>
+<li>Copia tot el codi següent a l’<em>script</em> que havies obert anteriorment en el <a href="navigate.html#pas2">Pas 2</a>.</li>
+<li>Posa el cursor a la primera línia de l’<em>script</em>.</li>
+<li>Prem repetidament Ctrl+Enter fins al final. Veuràs que R va llegint les indicacions de l’<em>script</em>. Reprodueix els resultats a la consola.</li>
+</ul>
+<pre><code>#Carreguem paquets
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(readxl)
+library(readr)
+
+#Operacions matemàtiques
+2 + 2 + 2
+10 / 5
+(10 + 2) / 100
+
+#Proves amb paquet base
+pi
+letters #en minúscula
+LETTERS #en majúscula
+
+#Proves amb paquet dplyr
+starwars
+count(starwars, homeworld)</code></pre>
+<p>Aquest és un exemple de com podem organitzar-nos el codi a l’<em>script</em>. Fixem-nos en dos detalls:</p>
+<ul>
+<li>R no reprodueix les línies de codi que comencen amb #.</li>
+<li>R no llegeix el text que hi ha a la dreta del símbol <code>#</code>, a la línia de codi de <code>letters</code> i de <code>LETTERS</code>.</li>
+</ul>
+<p>Ara vegem què passaria si traguéssim el coixinet.</p>
+<pre><code>Proves amb paquet base
+letters en minúscula</code></pre>
+<p>El programa ens retorna un <strong>error</strong>. R es pensa que <code>Proves amb paquet base</code> i <code>letters en minúscula</code> són els noms de diversos objectes, que òbviament no reconeix.</p>
+</div>
+</div>
+<div id="script-rules" class="section level3 hasAnchor" number="1.5.2">
+<h3><span class="header-section-number">1.5.2</span> Regles bàsiques de l’<em>script</em><a href="r-script.html#script-rules" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Hi ha quatre regles bàsiques que hem de seguir quan utilitzem l’<em>script</em>.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Els espais:</strong> R no llegeix els espais. Si els posem és perquè ens ajuden a entendre millor el codi. Per exemple, R llegirà igual <code>glimpse(starwars)</code> que <code>glimpse( starwars )</code>, o també</li>
+</ol>
+<pre><code>2+2
+2   + 2</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Salts de línia:</strong> Quan demanem a R que llegeixi una línia de codi, el programa ens saltarà automàticament a la següent si interpreta que el codi no està finalitzat. Per exemple::</li>
+</ol>
+<pre><code>count(starwars, 
+      homeworld)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p><strong>Cursor:</strong> Si el cursor està situat en qualsevol posició en la línia d’ordres de l’script, R llegirà tota la frase sencera (i això pot comportar que R també ens llegeixi línies superiors o inferiors). En el codi següent, tenim el cursor a la línia d’ordres número 5. Si premem Ctrl+Enter, anirà a buscar el principi del codi fins a la línia número 2.
+<img src="img/command-line.png" style="width:70.0%" /></p></li>
+<li><p><strong>Selecció:</strong> Si en lloc de situar el cursor en una part del codi, seleccionem una part de la línia d’ordres il·luminant-la amb el cursor i premem Ctrl+Enter, R només ens llegirà aquesta part. En el codi següent, R interpreta que NOMÉS ha de llegir <code>starwars</code>.
+<img src="img/command-select.png" style="width:70.0%" /></p></li>
+</ol>
+<div class="alert alert-danger">
+<p><strong>ERROR ERROR ERROR!</strong>: Quan treballem amb R, és molt habitual que ens apareguin errors a la consola. El més important és <strong>aprendre a llegir la consola</strong> per saber de quin error es tracta. Les principals fonts d’error amb les quals ens trobarem corresponen a coses que ja hem vist a hores d’ara. Aquí tenim alguns dels errors més habituals:</p>
+<ol style="list-style-type: decimal">
+<li>Acabem un codi amb una <strong>coma</strong> (<code>starwars,</code>) i R interpreta per error que ha de llegir la línia següent:</li>
+</ol>
+<pre><code>Error: unexpected &#39;,&#39; in &quot;starwars,&quot;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Acabem un codi sense tancar un <strong>parèntesi</strong> (<code>glimpse(starwars</code>) i R interpreta per error que ha de llegir la línia següent:</li>
+</ol>
+<pre><code>En aquest cas apareixerà un símbol + a la consola</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Acabem un codi sense tancar una <strong>cometa</strong> i R interpreta per error que ha de llegir la línia següent:</li>
+</ol>
+<pre><code>En aquest cas apareixerà un símbol + a la consola</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>No hem instal·lat el <strong>paquet</strong> <code>ddf</code> o bé no hem escrit correctament el nom del paquet que volíem utilitzar.</li>
+</ol>
+<pre><code>Error in library(ddf) : there is no package called ‘ddf&#39;</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>No tenim carregat el <strong>paquet</strong> contenidor de la funció <code>frtr</code> o bé hem teclejat malament el nom de la funció.</li>
+</ol>
+<pre><code>Error in frtr(dd) : could not find function &quot;frtr&quot;</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>No hi ha <strong>cap objecte</strong> que es digui <code>letters en</code>.</li>
+</ol>
+<pre><code>Error: unexpected symbol in &quot;letters en&quot;</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>No hi ha <strong>cap objecte</strong> que es digui <code>strawars</code>.</li>
+</ol>
+<pre><code>Error: object &#39;strawars&#39; not found</code></pre>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="starwars.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="objects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-guiarstudio.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["intro-r-cat.pdf", "intro-r-cat.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

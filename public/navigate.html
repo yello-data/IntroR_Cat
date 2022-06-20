@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ca" xml:lang="ca">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.2 Orientació a RStudio | R en Ciències Socials</title>
+  <meta name="description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.2 Orientació a RStudio | R en Ciències Socials" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.2 Orientació a RStudio | R en Ciències Socials" />
+  
+  <meta name="twitter:description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  
+
+<meta name="author" content="Jordi Mas Elias" />
+
+
+<meta name="date" content="2022-06-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="install.html"/>
+<link rel="next" href="packages.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R en Ciències Socials</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefaci</a></li>
+<li class="chapter" data-level="1" data-path="guiarstudio.html"><a href="guiarstudio.html"><i class="fa fa-check"></i><b>1</b> Guia d’RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>1.1</b> Instal·lació</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="install.html"><a href="install.html#install-r"><i class="fa fa-check"></i><b>1.1.1</b> Instal·lació d’R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="install.html"><a href="install.html#install-rstudio"><i class="fa fa-check"></i><b>1.1.2</b> Instal·lació d’RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="navigate.html"><a href="navigate.html"><i class="fa fa-check"></i><b>1.2</b> Orientació a RStudio</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="navigate.html"><a href="navigate.html#create-project"><i class="fa fa-check"></i><b>1.2.1</b> Crear un projecte</a></li>
+<li class="chapter" data-level="1.2.2" data-path="navigate.html"><a href="navigate.html#create-script"><i class="fa fa-check"></i><b>1.2.2</b> Crear un Script</a></li>
+<li class="chapter" data-level="1.2.3" data-path="navigate.html"><a href="navigate.html#four-windows"><i class="fa fa-check"></i><b>1.2.3</b> Les quatre finestres</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.3</b> Paquets</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="packages.html"><a href="packages.html#els-paquets-de-sèrie"><i class="fa fa-check"></i><b>1.3.1</b> Els paquets de sèrie</a></li>
+<li class="chapter" data-level="1.3.2" data-path="packages.html"><a href="packages.html#new-packages"><i class="fa fa-check"></i><b>1.3.2</b> Instal·lació de nous paquets</a></li>
+<li class="chapter" data-level="1.3.3" data-path="packages.html"><a href="packages.html#load-packages"><i class="fa fa-check"></i><b>1.3.3</b> Càrrega de paquets</a></li>
+<li class="chapter" data-level="1.3.4" data-path="packages.html"><a href="packages.html#open-packages"><i class="fa fa-check"></i><b>1.3.4</b> Obertura d’un paquet</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="starwars.html"><a href="starwars.html"><i class="fa fa-check"></i><b>1.4</b> L’objecte Star Wars</a></li>
+<li class="chapter" data-level="1.5" data-path="r-script.html"><a href="r-script.html"><i class="fa fa-check"></i><b>1.5</b> <em>Script</em></a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="r-script.html"><a href="r-script.html#order-script"><i class="fa fa-check"></i><b>1.5.1</b> Ordenació de l’<em>script</em></a></li>
+<li class="chapter" data-level="1.5.2" data-path="r-script.html"><a href="r-script.html#script-rules"><i class="fa fa-check"></i><b>1.5.2</b> Regles bàsiques de l’<em>script</em></a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="objects.html"><a href="objects.html"><i class="fa fa-check"></i><b>1.6</b> Els objectes</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="objects.html"><a href="objects.html#create-objects"><i class="fa fa-check"></i><b>1.6.1</b> Crear objectes</a></li>
+<li class="chapter" data-level="1.6.2" data-path="objects.html"><a href="objects.html#consulta-reproducció-i-eliminació-dobjectes"><i class="fa fa-check"></i><b>1.6.2</b> Consulta, reproducció i eliminació d’objectes</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="import-files.html"><a href="import-files.html"><i class="fa fa-check"></i><b>1.7</b> Importar arxius</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="import-files.html"><a href="import-files.html#import-files-web"><i class="fa fa-check"></i><b>1.7.1</b> Importar des d’una web</a></li>
+<li class="chapter" data-level="1.7.2" data-path="import-files.html"><a href="import-files.html#import-files-wd"><i class="fa fa-check"></i><b>1.7.2</b> Importació des del directori de treball</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>1.8</b> Resum</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referències.html"><a href="referències.html"><i class="fa fa-check"></i>Referències</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R en Ciències Socials</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="navigate" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Orientació a RStudio<a href="navigate.html#navigate" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Quan entrem a RStudio per primera vegada (a partir d’ara ens referirem a RStudio simplement com a <strong>R</strong>), veurem una imatge semblant a la següent. Els tres primers passos que hem de seguir, detallats més endavant, estan indicats en la imatge:</p>
+<ul>
+<li><a href="navigate.html#create-project"><strong>Pas 1</strong></a>: crearem el nostre primer projecte des de la part superior dreta de la pantalla.</li>
+<li><a href="navigate.html#create-script"><strong>Pas 2</strong></a>: crearem el nostre primer <em>script</em> des de la part superior esquerra de la pantalla.</li>
+<li><a href="navigate.html#four-windows"><strong>Pas 3</strong></a>: modificarem la visualització de la interfície del nostre RStudio.</li>
+</ul>
+<p><img src="img/interface-r.png" style="width:95.0%" /></p>
+<div id="create-project" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Crear un projecte<a href="navigate.html#create-project" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Els projectes ens serveixen per ordenar el material amb què treballem: arxius, carpetes, scripts, etc. És molt recomanable que <strong>obrim un projecte per cada activitat</strong> que fem. Si en una assignatura tenim quatre activitats, l’ideal és obrir quatre projectes, un per cada activitat<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<div class="alert alert-info">
+<p><strong>Pas 1. Crea un projecte:</strong> Prem el botó de la part superior dreta de la interfície d’R per crear un projecte. Segueix els passos que s’indiquen en la imatge següent:</p>
+<p><img src="img/projecte-1.png" style="width:95.0%" />
+Arribaràs a la finestra <strong>Create New Project</strong>, on hauràs de posar el nom del projecte. A <code>Browse</code>, indica on es troba la carpeta de la teva assignatura (per exemple, Geografia, AnalisiDades, etc.) i posa un nom al projecte a <code>Directory name</code>, per exemple, PAC1 o Prova. Quan premis <code>Create Project</code>, R et crearà una carpeta amb el nom del projecte. D’aquesta carpeta en direm <strong>directori de treball</strong>.</p>
+<p><img src="img/projecte-2.png" style="width:50.0%" /></p>
+<p>Cada projecte té associat un directori de treball, que correspon a una carpeta del teu ordinador. És preferible que no hi hagi accents, ni a les carpetes ni al nom del projecte. Per exemple, cal evitar <code>~/Documents/Adrià/AnàlisiDades</code>. És preferible <code>~/Documents/Adria/AnalisiDades</code><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+</div>
+<p>Un cop haguem creat el projecte, tornarem a la interfície principal d’RStudio. Fixem-nos que el botó superior dret que havíem clicat abans ja té el nom del projecte que hem acabat de crear. R ens mantindrà la sessió iniciada en aquest projecte fins que no indiquem el contrari.</p>
+</div>
+<div id="create-script" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Crear un Script<a href="navigate.html#create-script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ja hem vist que la interfície està dividida en tres finestres, on tenim destacades les pestanyes Console, Files i Environment. Abans de res, crearem una quarta finestra: l’<strong><em>script</em></strong>.</p>
+<div class="alert alert-info">
+<p><strong><span id="pas2">Pas 2.</span> Crea i guarda un <em>script</em>:</strong> A l’extrem superior esquerre de la interfície d’RStudio podràs obrir un desplegable amb diferents tipus de documents d’R. Seleccionarem el primer: <strong>R Script</strong>. A continuació guarda l’<em>script</em> al teu directori de treball prement la icona del disquet a la part superior de l’<em>script</em>.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+<p><img src="img/r-script.png" style="width:95.0%" /></p>
+<p>Pots guardar els scripts també amb Ctrl+S (Command+S en Mac).</p>
+</div>
+<p>Com veurem més endavant, l’<em>script</em> ens servirà per registrar tots els passos que fem amb R. A vegades, en lloc de l’<em>script</em> tindrem, com a quarta finestra, altres tipus de documents, com l’RMarkdown o Shiny Web App, però per ara només treballarem amb l’<em>script</em>.</p>
+</div>
+<div id="four-windows" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Les quatre finestres<a href="navigate.html#four-windows" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ara ja tenim les <strong>quatre finestres</strong> a la interfície d’RStudio, amb les quals treballarem habitualment. Anirem descobrint de mica en mica per a què serveix cada una. De moment, és suficient saber que:</p>
+<ul>
+<li>L’<em>script</em> és un document amb el qual podem anotar i transmetre les nostres indicacions a R.</li>
+<li>La consola és l’instrument que utilitzem per interactuar amb R.</li>
+<li>L’environment ens permet consultar tot el que R té emmagatzemat en memòria.</li>
+<li>El files és la connexió d’R amb el sistema de carpetes del nostre ordinador. Normalment hi veurem el directori de treball del nostre projecte.</li>
+</ul>
+<p><img src="img/four-screens.png" style="width:80.0%" /></p>
+<p>En aquestes finestres, hi ha algunes pestanyes (marcades amb requadre vermell a la imatge) que també utilitzarem. En veurem la utilitat més endavant. Per ara, només ens cal saber que existeixen:
+- La pestanya Plots (finestra Files) mostra els gràfics que generem amb R.
+- La pestanya Viewer (finestra Files) mostra els arxius HTML que generem amb R.
+- La pestanya Help (finestra Files) mostra els menús d’ajuda. La pestanya Packages (finestra Files) mostra els paquets que tenim instal·lats i carregats.
+- La pestanya Tutorial (finestra Environment) ens permet avançar l’aprenentatge del programa pel nostre compte amb tutorials àgils.
+- Les altres pestanyes no les farem servir fins a cursos més avançats.</p>
+<div class="alert alert-info">
+<p><strong>Pas 3. Personalitza el teu R:</strong> Ens devem haver adonat que les captures de pantalla que hem vist anteriorment són amb fons negre, mentre que al nostre ordinador el fons ens apareix en blanc. Per personalitzar el nostre RStudio, anirem a Preferències a la part superior esquerra i seleccionarem Appearance a la finestra que ens aparegui.</p>
+<p><img src="img/custom-r.png" style="width:75.0%" /></p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>La raó principal per la qual s’insisteix en l’ús de projectes és que els projectes estan vinculats a una carpeta del nostre ordinador, que és coneguda per l’usuari. Així, si s’insisteix que tots els arxius que s’utilitzen han d’estar ubicats a la carpeta del projecte, es minimitzen els errors a l’hora de crear objectes a partit d’arxius.<a href="navigate.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>2. Podem consultar la direcció del directori de treball si teclegem a la consola <code>getwd()</code><a href="navigate.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Amb Windows, també el podem crear amb la drecera de teclat Ctrl+Shift+N. Amb macOs, Command+Shift+N.<a href="navigate.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="install.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="packages.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-guiarstudio.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["intro-r-cat.pdf", "intro-r-cat.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

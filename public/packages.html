@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ca" xml:lang="ca">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.3 Paquets | R en Ciències Socials</title>
+  <meta name="description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.3 Paquets | R en Ciències Socials" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.3 Paquets | R en Ciències Socials" />
+  
+  <meta name="twitter:description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  
+
+<meta name="author" content="Jordi Mas Elias" />
+
+
+<meta name="date" content="2022-06-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="navigate.html"/>
+<link rel="next" href="starwars.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R en Ciències Socials</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefaci</a></li>
+<li class="chapter" data-level="1" data-path="guiarstudio.html"><a href="guiarstudio.html"><i class="fa fa-check"></i><b>1</b> Guia d’RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>1.1</b> Instal·lació</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="install.html"><a href="install.html#install-r"><i class="fa fa-check"></i><b>1.1.1</b> Instal·lació d’R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="install.html"><a href="install.html#install-rstudio"><i class="fa fa-check"></i><b>1.1.2</b> Instal·lació d’RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="navigate.html"><a href="navigate.html"><i class="fa fa-check"></i><b>1.2</b> Orientació a RStudio</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="navigate.html"><a href="navigate.html#create-project"><i class="fa fa-check"></i><b>1.2.1</b> Crear un projecte</a></li>
+<li class="chapter" data-level="1.2.2" data-path="navigate.html"><a href="navigate.html#create-script"><i class="fa fa-check"></i><b>1.2.2</b> Crear un Script</a></li>
+<li class="chapter" data-level="1.2.3" data-path="navigate.html"><a href="navigate.html#four-windows"><i class="fa fa-check"></i><b>1.2.3</b> Les quatre finestres</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.3</b> Paquets</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="packages.html"><a href="packages.html#els-paquets-de-sèrie"><i class="fa fa-check"></i><b>1.3.1</b> Els paquets de sèrie</a></li>
+<li class="chapter" data-level="1.3.2" data-path="packages.html"><a href="packages.html#new-packages"><i class="fa fa-check"></i><b>1.3.2</b> Instal·lació de nous paquets</a></li>
+<li class="chapter" data-level="1.3.3" data-path="packages.html"><a href="packages.html#load-packages"><i class="fa fa-check"></i><b>1.3.3</b> Càrrega de paquets</a></li>
+<li class="chapter" data-level="1.3.4" data-path="packages.html"><a href="packages.html#open-packages"><i class="fa fa-check"></i><b>1.3.4</b> Obertura d’un paquet</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="starwars.html"><a href="starwars.html"><i class="fa fa-check"></i><b>1.4</b> L’objecte Star Wars</a></li>
+<li class="chapter" data-level="1.5" data-path="r-script.html"><a href="r-script.html"><i class="fa fa-check"></i><b>1.5</b> <em>Script</em></a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="r-script.html"><a href="r-script.html#order-script"><i class="fa fa-check"></i><b>1.5.1</b> Ordenació de l’<em>script</em></a></li>
+<li class="chapter" data-level="1.5.2" data-path="r-script.html"><a href="r-script.html#script-rules"><i class="fa fa-check"></i><b>1.5.2</b> Regles bàsiques de l’<em>script</em></a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="objects.html"><a href="objects.html"><i class="fa fa-check"></i><b>1.6</b> Els objectes</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="objects.html"><a href="objects.html#create-objects"><i class="fa fa-check"></i><b>1.6.1</b> Crear objectes</a></li>
+<li class="chapter" data-level="1.6.2" data-path="objects.html"><a href="objects.html#consulta-reproducció-i-eliminació-dobjectes"><i class="fa fa-check"></i><b>1.6.2</b> Consulta, reproducció i eliminació d’objectes</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="import-files.html"><a href="import-files.html"><i class="fa fa-check"></i><b>1.7</b> Importar arxius</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="import-files.html"><a href="import-files.html#import-files-web"><i class="fa fa-check"></i><b>1.7.1</b> Importar des d’una web</a></li>
+<li class="chapter" data-level="1.7.2" data-path="import-files.html"><a href="import-files.html#import-files-wd"><i class="fa fa-check"></i><b>1.7.2</b> Importació des del directori de treball</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>1.8</b> Resum</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referències.html"><a href="referències.html"><i class="fa fa-check"></i>Referències</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R en Ciències Socials</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="packages" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Paquets<a href="packages.html#packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>RStudio és semblant al sistema operatiu Windows. Quan acabem de comprar-lo i l’obrim, està pràcticament buit. No té cap programa instal·lat. Si volem que Windows ens serveixi d’alguna cosa, haurem d’instal·lar-hi programes com Word, Excel i algun navegador. Amb R passa el mateix. Quan obrim R per primera vegada, està més aviat buit per dins de sèrie. Té incorporats alguns petits programes (a partir d’ara dels programes d’R en direm <strong>paquets</strong> o <strong>llibreries</strong>), però els programes més potents i que els usuaris utilitzen més sovint no venen instal·lats de sèrie. A Windows, el més normal és que haguem d’invertir uns quants diners per comprar i instal·lar programes. A R no cal comprar-los perquè tots són gratis. El que sí que haurem de fer serà instal·lar-los.</p>
+<div id="els-paquets-de-sèrie" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Els paquets de sèrie<a href="packages.html#els-paquets-de-sèrie" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Hi ha uns paquets d’R que ja ens venen instal·lats de sèrie. Per veure quins són, una opció que tenim és anar a la pestanya Packages, que és a la finestra de Files. Tota la llista que hi apareix són els programes que tenim instal·lats. L’altra opció és fer la consulta a través de la consola. Provem de teclejar <code>installed.packages()</code> a la consola.</p>
+<div class="alert alert-info">
+<p><strong><span id="pas4">Pas 4</span>. Observa quins paquets tens instal·lats.</strong> Ara interactuarem per primera vegada amb R a través de la consola. A la fletxa s’indica on podem escriure text.</p>
+<p><img src="img/consola.png" style="width:70.0%" /></p>
+<p>Provem de teclejar el següent:</p>
+<pre><code>installed.packages()</code></pre>
+<p>Prem <strong>Enter</strong> al teclat per executar l’acció.</p>
+</div>
+<p>Acabem de donar la nostra primera ordre a R. I ens ha contestat! R sempre utilitzarà la consola per respondre les nostres peticions. És per això que abans hem definit la consola com l’instrument que utilitzem per interactuar amb R. Una forma d’interacció que tenim a l’abast és fer servir R com una <strong>calculadora</strong>. Si li preguntem pel resultat d’algunes operacions matemàtiques, també ens respondrà a través de la consola.</p>
+<div class="alert alert-info">
+<p><strong>Pas 5. Calcula:</strong> Ara farem servir la consola com a calculadora. Introdueix, una per una, les operacions següents i prem Enter per executar l’acció.</p>
+<pre><code>2 + 2 + 2
+10 / 5
+(10 + 2) / 100</code></pre>
+<p>La consola ens hauria de retornar el resultat de cada operació.</p>
+</div>
+</div>
+<div id="new-packages" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Instal·lació de nous paquets<a href="packages.html#new-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Com que ja hem vist que no tenim gaires paquets instal·lats a R, a continuació demanarem a R que n’instal·li alguns de nous. Ho farem amb una funció molt semblant a l’anterior, <code>install.packages()</code>, que serveix per instal·lar paquets.</p>
+<div class="alert alert-info">
+<p><strong>Pas 6. Instal·la els primers paquets:</strong> A continuació instal·larem els paquets següents, que són els més utilitzats pels usuaris d’R: <strong>dplyr</strong> <span class="citation">(<a href="#ref-R-dplyr" role="doc-biblioref">Wickham et al. 2022</a>)</span>, <strong>ggplot2</strong> <span class="citation">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham et al. 2021</a>)</span>, <strong>tidyr</strong> <span class="citation">(<a href="#ref-R-tidyr" role="doc-biblioref">Wickham i Girlich 2022</a>)</span>, <strong>readxl</strong> <span class="citation">(<a href="#ref-R-readxl" role="doc-biblioref">Wickham i Bryan 2019</a>)</span> i <strong>readr</strong> <span class="citation">(<a href="#ref-R-readr" role="doc-biblioref">Wickham, Hester, i Bryan 2022</a>)</span><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. Més endavant coneixerem què fa cadascun. Tecleja o copia i enganxa el codi següent a la consola i prem Enter.</p>
+<pre><code>install.packages(c(&quot;dplyr&quot;, &quot;ggplot2&quot;, &quot;tidyr&quot;, &quot;readxl&quot;, &quot;readr&quot;))</code></pre>
+<p>Potser us demana si voleu instal·lar els paquets que necessiten compilació. Premeu Y. És possible que el procés tardi uns minuts a completar-se.</p>
+</div>
+<p>Cal seguir dues <span id="reglespaquets"><strong>regles bàsiques</strong></span> a l’hora d’instal·lar els paquets a R:</p>
+<ul>
+<li>Si hi instal·lem només <strong>un</strong> paquet, per exemple, un paquet que es digui <code>"paquet1"</code>, teclejarem <code>install.packages("paquet1")</code>.</li>
+<li>Si, en canvi, instal·lem <strong>dos o més</strong> paquets, escriurem una <code>c()</code> a dins de la primera funció i separarem cada paquet per una coma, per exemple, <code>install.packages(c("paquet1", "paquet2"))</code>.</li>
+</ul>
+<p>Si ara tornem a teclejar <code>installed.packages()</code> (<a href="packages.html#pas4">pas 4</a>), veurem que tenim més paquets instal·lats a R<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>. Per ara, només hem instal·lat cinc paquets nous, però és possible que més endavant necessitem algun paquet, que també haurem d’instal·lar seguint el mateix procediment.</p>
+<div class="alert alert-danger">
+<p><strong>ERROR! ERROR! ERROR!</strong> A vegades poden sorgir errors a l’hora d’instal·lar paquets. Aquestes són algunes de les possibles causes:</p>
+<ul>
+<li>No teniu connexió a internet.</li>
+<li>No heu posat <code>c()</code> o bé no heu separat cada paquet per una coma (consulta <a href="packages.html#reglespaquets">regles bàsiques</a> per instal·lar paquets).</li>
+<li>No heu rodejat el nom de cada paquet <code>"entre cometes"</code>.</li>
+<li>Si no és cap d’aquestes causes, és possible que hagueu de consultar el Laboratori R (vegeu l’aula).</li>
+</ul>
+</div>
+</div>
+<div id="load-packages" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Càrrega de paquets<a href="packages.html#load-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Continuant el símil amb Windows, quan instal·lem Microsoft Word no vol dir que el programa ja estigui en funcionament. Si volem que Word funcioni, òbviament haurem d’obrir el programa. Amb R passa el mateix. Tenir un paquet instal·lat no vol dir que estigui funcionant en R. A R, en lloc d’«obrir programes» diem <strong>«carregar paquets»</strong>. Si tornem a la finestra Packages (és una pestanya de la finestra Files), podem veure quins paquets tenim instal·lats i quins tenim instal·lats i carregats.</p>
+<ul>
+<li>Tots els paquets que apareixen a la llista estan <strong>instal·lats</strong> (<strong>1</strong>)</li>
+<li>Però només els que tenen un <em>check</em> també estan <strong>carregats</strong> (<strong>2</strong>).</li>
+</ul>
+<p><img src="img/library.png" style="width:70.0%" /></p>
+<p>Hi ha dues maneres més de mirar els paquets que tenim carregats: introduint la funció <code>search()</code> a la consola o bé clicant el botó Global Environment a la finestra Environment.</p>
+<div class="alert alert-info">
+<p><strong>Pas 7. Comprova els paquets instal·lats i carregats</strong>: Escriu la funció <code>installed.packages()</code> a la consola i prem Enter per veure els paquets que ara tens instal·lats.</p>
+<pre><code>installed.packages() </code></pre>
+<p>I ara escriu la funció <code>search()</code> per veure els paquets que tens carregats.</p>
+<pre><code>search() </code></pre>
+</div>
+<p>Com veiem, tenim instal·lats els paquets dplyr, ggplot2, tidyr, readxl i readr, però encara <strong>no els tenim carregats</strong>. I si no els tenim carregats, no els podrem fer servir. Per carregar paquets utilitzarem la funció <code>library()</code>.</p>
+<div class="alert alert-info">
+<p><strong>Pas 8. Carrega els paquets</strong>: Carregarem, un per un, els paquets que hem instal·lat prèviament. En primer lloc, carregarem el paquet <code>dplyr</code>. No oblidis de prémer Enter.</p>
+<pre><code>library(dplyr)</code></pre>
+<p>Quan carreguis dplyr t’hauria d’aparèixer un missatge a la consola. A continuació, carrega el paquet <code>ggplot2</code>.</p>
+<pre><code>library(ggplot2)</code></pre>
+<p>Amb <code>ggplot2</code> la consola normalment no ens dona cap resposta. És normal. Segueix. En tercer lloc, carrega el paquet <code>tidyr</code>.</p>
+<pre><code>library(tidyr)</code></pre>
+<p>I finalment, carrega el paquet <code>readxl</code>.</p>
+<pre><code>library(readxl)</code></pre>
+<p>Pots comprovar que tens els paquets carregats amb <code>search()</code>.</p>
+</div>
+<p>Perquè un paquet es pugui utilitzar a R, doncs, haurà d’estar instal·lat i carregat. És molt important saber distingir entre instal·lar un paquet i carregar-lo:</p>
+<ul>
+<li>Els paquets només <strong>s’instal·len un cop</strong> cada cert temps. Poden passar anys fins que no reinstal·lem un paquet. Normalment necessitarem tornar a instal·lar un paquet en un futur si apareix una nova versió i ens convé actualitzar-lo. Els paquets instal·lats ocupen espai a la memòria del nostre ordinador.</li>
+<li>En canvi, els paquets s’han de <strong>carregar cada vegada</strong> que entrem a RStudio o obrim un nou projecte. Ho farem, un per un, amb la funció <code>library()</code><a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. Els paquets carregats fan servir memòria RAM. Per això, cada vegada que sortim d’RStudio, els paquets es descarreguen per no alentir el funcionament del nostre ordinador.</li>
+</ul>
+</div>
+<div id="open-packages" class="section level3 hasAnchor" number="1.3.4">
+<h3><span class="header-section-number">1.3.4</span> Obertura d’un paquet<a href="packages.html#open-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Obrir paquets sempre fa il·lusió. Per entendre com obrir els paquets que tenim instal·lats i carregats a R, podríem fer un símil amb els arxius comprimits .zip. Quan obrim un .zip, ens podem trobar tot tipus de documents. Els paquets són quelcom semblant i emmagatzemen objectes i funcions que ens seran molt útils per treballar amb R.</p>
+<p>Podem veure <strong>el contingut d’un paquet</strong> de dues maneres:</p>
+<ol style="list-style-type: decimal">
+<li><p>A la finestra Environment, fem clic a Global Environment i seleccionem el nom del paquet.
+<img src="img/package-base.png" style="width:70.0%" /></p></li>
+<li><p>A la consola teclegem el nom del paquet seguit de <code>::</code>. Fixeu-vos que també ens apareix un petit panell d’ajuda per a cada element del paquet</p></li>
+</ol>
+<p><img src="img/package-open.png" style="width:70.0%" /></p>
+<div class="alert alert-info">
+<p><strong>Pas 9. Obra un paquet:</strong> Provem d’obrir el paquet base, que és un dels que tenim instal·lats i carregats per defecte a R <span class="citation">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2021</a>)</span>. En teclegem el nom a la consola seguit de dos <code>::</code> (COMPTE!: si copies i enganxes el codi, no se t’obrirà el desplegable. Has de teclejar el nom del paquet, que t’apareixerà quan posis els <code>::</code>).</p>
+<pre><code>base::</code></pre>
+<p>La llista que ens apareix conté tots els objectes i funcions del paquet, ordenats alfabèticament. Podem lliscar amunt i avall de la llista per veure’ls tots. Busca primer l’objecte <code>pi</code> i prem Enter.</p>
+<pre><code>base::pi</code></pre>
+<p>Veiem que ens apareix el número pi. Fes el mateix amb <code>letters</code> i <code>LETTERS</code>.</p>
+<pre><code>base::letters
+base::LETTERS</code></pre>
+<p>No cal que posem sempre el nom del paquet davant de l’objecte o funció que volem utilitzar. Sempre que el paquet estigui carregat, també podrem visualitzar qualsevol objecte només introduint-ne el nom.</p>
+<pre><code>pi
+letters
+LETTERS</code></pre>
+<p>En aquest darrer cas, ens ha reproduït els objectes <code>pi</code>, <code>letters</code> i <code>LETTERS</code> perquè el paquet <code>base</code> <strong>està carregat</strong>. Si no tinguéssim el paquet carregat, no ens els reproduiria.</p>
+</div>
+</div>
+</div>
+<h3>Referències<a href="referències.html#referències" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-R-base" class="csl-entry">
+R Core Team. 2021. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-R-tidyverse" class="csl-entry">
+Wickham, Hadley. 2021. <em>tidyverse: Easily Install and Load the Tidyverse</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>.
+</div>
+<div id="ref-R-readxl" class="csl-entry">
+Wickham, Hadley, i Jennifer Bryan. 2019. <em>readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl">https://CRAN.R-project.org/package=readxl</a>.
+</div>
+<div id="ref-R-ggplot2" class="csl-entry">
+Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, i Dewey Dunnington. 2021. <em>ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.
+</div>
+<div id="ref-R-dplyr" class="csl-entry">
+Wickham, Hadley, Romain François, Lionel Henry, i Kirill Müller. 2022. <em>dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr">https://CRAN.R-project.org/package=dplyr</a>.
+</div>
+<div id="ref-R-tidyr" class="csl-entry">
+Wickham, Hadley, i Maximilian Girlich. 2022. <em>tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr">https://CRAN.R-project.org/package=tidyr</a>.
+</div>
+<div id="ref-R-readr" class="csl-entry">
+Wickham, Hadley, Jim Hester, i Jennifer Bryan. 2022. <em>readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr">https://CRAN.R-project.org/package=readr</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>Una altra opció és instal·lar directament el paquet <code>tidyverse</code> <span class="citation">(<a href="#ref-R-tidyverse" role="doc-biblioref">Wickham 2021</a>)</span>, que conté tots els paquets anteriors i alguns paquets més. No obstant, aquí preferim utilitzar els paquets individuals per dos motius: ens ajudarà a familiaritzar-nos amb cada paquet; no ens ocuparà tant espai ni tanta memòria RAM a l’ordinador.<a href="packages.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Per una visualització més directa els paquets instal·lats, premeu <code>names(installed.packages()[,1])</code>.<a href="packages.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Hi ha altres maneres més ràpides d’instal·lar paquets. Si primer instal·lem i carreguem el paquet <code>pacman</code>, podem carregar tots els paquets amb la funció <code>pload()</code>. Per exemple: <code>p_load(dplyr, tidyr, ggplot2, readr, readxl)</code>. <a href="https://www.rdocumentation.org/packages/pacman/versions/0.5.1">Més informació.</a><a href="packages.html#fnref6" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="navigate.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="starwars.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-guiarstudio.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["intro-r-cat.pdf", "intro-r-cat.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
