@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ca" xml:lang="ca">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.4 L’objecte Star Wars | R en Ciències Socials</title>
+  <meta name="description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.4 L’objecte Star Wars | R en Ciències Socials" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.4 L’objecte Star Wars | R en Ciències Socials" />
+  
+  <meta name="twitter:description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  
+
+<meta name="author" content="Jordi Mas Elias" />
+
+
+<meta name="date" content="2022-06-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="packages.html"/>
+<link rel="next" href="r-script.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R en Ciències Socials</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefaci</a></li>
+<li class="chapter" data-level="1" data-path="guiarstudio.html"><a href="guiarstudio.html"><i class="fa fa-check"></i><b>1</b> Guia d’RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>1.1</b> Instal·lació</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="install.html"><a href="install.html#install-r"><i class="fa fa-check"></i><b>1.1.1</b> Instal·lació d’R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="install.html"><a href="install.html#install-rstudio"><i class="fa fa-check"></i><b>1.1.2</b> Instal·lació d’RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="navigate.html"><a href="navigate.html"><i class="fa fa-check"></i><b>1.2</b> Orientació a RStudio</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="navigate.html"><a href="navigate.html#create-project"><i class="fa fa-check"></i><b>1.2.1</b> Crear un projecte</a></li>
+<li class="chapter" data-level="1.2.2" data-path="navigate.html"><a href="navigate.html#create-script"><i class="fa fa-check"></i><b>1.2.2</b> Crear un Script</a></li>
+<li class="chapter" data-level="1.2.3" data-path="navigate.html"><a href="navigate.html#four-windows"><i class="fa fa-check"></i><b>1.2.3</b> Les quatre finestres</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.3</b> Paquets</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="packages.html"><a href="packages.html#els-paquets-de-sèrie"><i class="fa fa-check"></i><b>1.3.1</b> Els paquets de sèrie</a></li>
+<li class="chapter" data-level="1.3.2" data-path="packages.html"><a href="packages.html#new-packages"><i class="fa fa-check"></i><b>1.3.2</b> Instal·lació de nous paquets</a></li>
+<li class="chapter" data-level="1.3.3" data-path="packages.html"><a href="packages.html#load-packages"><i class="fa fa-check"></i><b>1.3.3</b> Càrrega de paquets</a></li>
+<li class="chapter" data-level="1.3.4" data-path="packages.html"><a href="packages.html#open-packages"><i class="fa fa-check"></i><b>1.3.4</b> Obertura d’un paquet</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="starwars.html"><a href="starwars.html"><i class="fa fa-check"></i><b>1.4</b> L’objecte Star Wars</a></li>
+<li class="chapter" data-level="1.5" data-path="r-script.html"><a href="r-script.html"><i class="fa fa-check"></i><b>1.5</b> <em>Script</em></a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="r-script.html"><a href="r-script.html#order-script"><i class="fa fa-check"></i><b>1.5.1</b> Ordenació de l’<em>script</em></a></li>
+<li class="chapter" data-level="1.5.2" data-path="r-script.html"><a href="r-script.html#script-rules"><i class="fa fa-check"></i><b>1.5.2</b> Regles bàsiques de l’<em>script</em></a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="objects.html"><a href="objects.html"><i class="fa fa-check"></i><b>1.6</b> Els objectes</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="objects.html"><a href="objects.html#create-objects"><i class="fa fa-check"></i><b>1.6.1</b> Crear objectes</a></li>
+<li class="chapter" data-level="1.6.2" data-path="objects.html"><a href="objects.html#consulta-reproducció-i-eliminació-dobjectes"><i class="fa fa-check"></i><b>1.6.2</b> Consulta, reproducció i eliminació d’objectes</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="import-files.html"><a href="import-files.html"><i class="fa fa-check"></i><b>1.7</b> Importar arxius</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="import-files.html"><a href="import-files.html#import-files-web"><i class="fa fa-check"></i><b>1.7.1</b> Importar des d’una web</a></li>
+<li class="chapter" data-level="1.7.2" data-path="import-files.html"><a href="import-files.html#import-files-wd"><i class="fa fa-check"></i><b>1.7.2</b> Importació des del directori de treball</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>1.8</b> Resum</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referències.html"><a href="referències.html"><i class="fa fa-check"></i>Referències</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R en Ciències Socials</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="starwars" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> L’objecte Star Wars<a href="starwars.html#starwars" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ja hem avançat molt amb el domini d’R. Ordenem una mica el que hem après fins ara:</p>
+<ul>
+<li>Per treballar amb R, necessitem <strong>paquets</strong>, que haurem de tenir instal·lats prèviament.</li>
+<li>Els paquets <strong>s’activen</strong>, un per un, amb la funció <code>library()</code>.</li>
+<li>Els paquets <strong>contenen</strong> principalment objectes i funcions.</li>
+<li>Treballar amb R consisteix bàsicament a <strong>aplicar funcions a objectes</strong>.</li>
+</ul>
+<p>Posem en pràctica totes aquestes idees amb l’exercici 1 següent, on veurem amb uns quants exemples com interactuen els objectes i funcions dels paquets d’R.</p>
+<div class="alert alert-success">
+<p><strong>Exercici 1: Starwars:</strong> A R tenim diversos paquets de sèrie, que no cal que instal·lem ni carreguem. Per exemple, dins del paquet <code>base</code> tenim la funció <code>Sys.time()</code>, que ens permet saber quina hora és.</p>
+<pre><code>Sys.time()</code></pre>
+<p>Amb R, també ens ve de sèrie el paquet <code>datasets</code>. Teclejarem <code>datasets::</code> a la consola i, quan aparegui el desplegable, seleccionarem algun dels objectes que conté i premerem Enter. Recordeu que heu de teclejar el nom del paquet, no pas copiar i enganxar.</p>
+<pre><code>datasets::</code></pre>
+<p>Ara explorarem el paquet <code>dplyr</code>. Si tenim carregat el paquet, ens l’haurà de mostrar quan teclegem <code>dplyr::</code>. Baixarem pel desplegable fins al final de tot.</p>
+<pre><code>dplyr::</code></pre>
+<p>Hi ha moltíssimes coses a dins del paquet <code>dplyr</code>! Entre elles l’objecte <code>starwars</code>. Com que tenim el paquet carregat, només cal que teclegem el nom de l’objecte per visualitzar-lo.</p>
+<pre><code>starwars</code></pre>
+<p>Ens interessa saber més sobre <code>starwars</code>. Farem una ullada a totes les seves variables amb la funció <code>glimpse()</code>, que també forma part del paquet <code>dplyr</code>.</p>
+<pre><code>glimpse(starwars)</code></pre>
+<p>Sembla que aquest marc de dades conté les característiques de tots els personatges de <em>Star Wars</em>. Buscarem a internet i trobarem que al <a href="https://dplyr.tidyverse.org/reference/starwars.html">web</a> de <code>dplyr</code> hi ha una breu descripció de les variables<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>. La primera variable, <code>name</code>, recull els noms dels personatges. Demanarem els noms únics amb <code>unique()</code> i els ordenarem alfabèticament amb <code>sort()</code>.</p>
+<pre><code>sort(unique(starwars$name))</code></pre>
+<p>La variable <code>height</code> conté l’alçada de cada personatge. Visualitzarem la distribució dels valors en un histograma amb la funció <code>hist()</code>.</p>
+<pre><code>hist(starwars$height)</code></pre>
+<p>Fixeu-vos que els gràfics s’obren directament a la pestanya Plots. Ara volem saber quants personatges de cada sexe hi ha, segons s’indica a la variable <code>sex</code>. Crearem una taula de freqüències amb <code>table()</code> i la visualitzarem amb la funció <code>barplot()</code>.</p>
+<pre><code>barplot(table(starwars$sex))</code></pre>
+<p>Finalment, volem comptar quants personatges hi ha comptabilitzats a cada planeta (<code>homeworld</code>) amb la funció <code>count()</code> del paquet <code>dplyr</code>.</p>
+<pre><code>count(starwars, homeworld)</code></pre>
+<p>R només ens mostra les deu primeres observacions de la llista a la consola. Visualitzarem l’objecte sencer amb <code>View()</code>.</p>
+<pre><code>View(count(starwars, homeworld))</code></pre>
+<p>Quan acabeu, <strong>tanqueu la finestra</strong> que s’acaba de crear.</p>
+</div>
+<p>En aquest Exercici 1 hem simulat el procediment habitual que seguirem per treballar amb R, que consisteix a <strong>aplicar funcions a objectes</strong>. Això vol dir que necessitem dominar principalment dues coses:</p>
+<ul>
+<li><strong>Crear objectes</strong> com <code>starwars</code> que continguin dades sobre temes que ens interessin.</li>
+<li><strong>Conèixer les funcions</strong> com <code>glimpse()</code> que serveixin per modificar i analitzar els objectes que hem creat.</li>
+</ul>
+<p>Abans, però, necessitem conèixer un element essencial que ens permetrà ordenar tot el nostre treball amb objectes i funcions: l’<em>script</em>.</p>
+<div class="alert alert-info">
+<p><strong>Pas 10. Fes una llista de funcions:</strong> Per aprendre a utilitzar R més ràpidament, és bo que facis una llista de les funcions que vas aprenent. Apunta el nom de la funció, el paquet al qual correspon i una breu descripció de la seva utilitat.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Funció</th>
+<th align="left">Paquet</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">installed.packages()</td>
+<td align="left">utils</td>
+<td align="left">Mirem paquets instal·lats</td>
+</tr>
+<tr class="even">
+<td align="left">install.packages()</td>
+<td align="left">utils</td>
+<td align="left">Instal·lem paquets</td>
+</tr>
+<tr class="odd">
+<td align="left">search()</td>
+<td align="left">base</td>
+<td align="left">Mirem paquets carregats</td>
+</tr>
+<tr class="even">
+<td align="left">library()</td>
+<td align="left">base</td>
+<td align="left">Carreguem un paquet</td>
+</tr>
+<tr class="odd">
+<td align="left">glimpse()</td>
+<td align="left">dplyr</td>
+<td align="left">Observem variables</td>
+</tr>
+</tbody>
+</table>
+<p>Per saber el paquet on es troba cada funció, només cal que introdueixis el nom de la funció a la consola. Al desplegable hi apareix el nom del paquet. Veuràs, per exemple, que la funció <code>hist()</code> correspon al paquet <code>graphics</code>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="7">
+<li id="fn7"><p>A la <a href="https://dplyr.tidyverse.org/index.html">pàgina principal</a> del paquet <code>dplyr</code> trobareu més exemples de funcions que podem aplicar a l’objecte <code>starwars</code>.<a href="starwars.html#fnref7" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="packages.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-script.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-guiarstudio.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["intro-r-cat.pdf", "intro-r-cat.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

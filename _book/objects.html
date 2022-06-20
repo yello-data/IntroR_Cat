@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ca" xml:lang="ca">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.6 Els objectes | R en Ciències Socials</title>
+  <meta name="description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.6 Els objectes | R en Ciències Socials" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.6 Els objectes | R en Ciències Socials" />
+  
+  <meta name="twitter:description" content="Aquest llibre té com a principal objectiu l’ensenyament d’R en línia als estudiants de Ciència Política i Relacions Internacionals." />
+  
+
+<meta name="author" content="Jordi Mas Elias" />
+
+
+<meta name="date" content="2022-06-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="r-script.html"/>
+<link rel="next" href="import-files.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R en Ciències Socials</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefaci</a></li>
+<li class="chapter" data-level="1" data-path="guiarstudio.html"><a href="guiarstudio.html"><i class="fa fa-check"></i><b>1</b> Guia d’RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>1.1</b> Instal·lació</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="install.html"><a href="install.html#install-r"><i class="fa fa-check"></i><b>1.1.1</b> Instal·lació d’R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="install.html"><a href="install.html#install-rstudio"><i class="fa fa-check"></i><b>1.1.2</b> Instal·lació d’RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="navigate.html"><a href="navigate.html"><i class="fa fa-check"></i><b>1.2</b> Orientació a RStudio</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="navigate.html"><a href="navigate.html#create-project"><i class="fa fa-check"></i><b>1.2.1</b> Crear un projecte</a></li>
+<li class="chapter" data-level="1.2.2" data-path="navigate.html"><a href="navigate.html#create-script"><i class="fa fa-check"></i><b>1.2.2</b> Crear un Script</a></li>
+<li class="chapter" data-level="1.2.3" data-path="navigate.html"><a href="navigate.html#four-windows"><i class="fa fa-check"></i><b>1.2.3</b> Les quatre finestres</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.3</b> Paquets</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="packages.html"><a href="packages.html#els-paquets-de-sèrie"><i class="fa fa-check"></i><b>1.3.1</b> Els paquets de sèrie</a></li>
+<li class="chapter" data-level="1.3.2" data-path="packages.html"><a href="packages.html#new-packages"><i class="fa fa-check"></i><b>1.3.2</b> Instal·lació de nous paquets</a></li>
+<li class="chapter" data-level="1.3.3" data-path="packages.html"><a href="packages.html#load-packages"><i class="fa fa-check"></i><b>1.3.3</b> Càrrega de paquets</a></li>
+<li class="chapter" data-level="1.3.4" data-path="packages.html"><a href="packages.html#open-packages"><i class="fa fa-check"></i><b>1.3.4</b> Obertura d’un paquet</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="starwars.html"><a href="starwars.html"><i class="fa fa-check"></i><b>1.4</b> L’objecte Star Wars</a></li>
+<li class="chapter" data-level="1.5" data-path="r-script.html"><a href="r-script.html"><i class="fa fa-check"></i><b>1.5</b> <em>Script</em></a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="r-script.html"><a href="r-script.html#order-script"><i class="fa fa-check"></i><b>1.5.1</b> Ordenació de l’<em>script</em></a></li>
+<li class="chapter" data-level="1.5.2" data-path="r-script.html"><a href="r-script.html#script-rules"><i class="fa fa-check"></i><b>1.5.2</b> Regles bàsiques de l’<em>script</em></a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="objects.html"><a href="objects.html"><i class="fa fa-check"></i><b>1.6</b> Els objectes</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="objects.html"><a href="objects.html#create-objects"><i class="fa fa-check"></i><b>1.6.1</b> Crear objectes</a></li>
+<li class="chapter" data-level="1.6.2" data-path="objects.html"><a href="objects.html#consulta-reproducció-i-eliminació-dobjectes"><i class="fa fa-check"></i><b>1.6.2</b> Consulta, reproducció i eliminació d’objectes</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="import-files.html"><a href="import-files.html"><i class="fa fa-check"></i><b>1.7</b> Importar arxius</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="import-files.html"><a href="import-files.html#import-files-web"><i class="fa fa-check"></i><b>1.7.1</b> Importar des d’una web</a></li>
+<li class="chapter" data-level="1.7.2" data-path="import-files.html"><a href="import-files.html#import-files-wd"><i class="fa fa-check"></i><b>1.7.2</b> Importació des del directori de treball</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>1.8</b> Resum</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referències.html"><a href="referències.html"><i class="fa fa-check"></i>Referències</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R en Ciències Socials</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="objects" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Els objectes<a href="objects.html#objects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ja hem vist anteriorment que a l’Environment hi ha emmagatzemats tots els objectes i funcions dels paquets que tenim carregats. Però també podem crear els nostres propis objectes i funcions. Ara mateix, si consultem a <strong>Global Environment</strong>, veurem que està buit.</p>
+<p><img src="img/global-environment.png" style="width:70.0%" /></p>
+<p>Ara crearem objectes (deixarem les funcions per a un curs més avançat).</p>
+<div id="create-objects" class="section level3 hasAnchor" number="1.6.1">
+<h3><span class="header-section-number">1.6.1</span> Crear objectes<a href="objects.html#create-objects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Els <strong>objectes</strong> són un conjunt de dades que s’emmagatzemen a R amb un nom determinat. Per crear un objecte propi i emmagatzemar-lo al Global Environment, necessitarem el símbol <code>&lt;-</code><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>. A l’esquerra del símbol hi posarem el nom que adoptarà l’objecte i a la dreta hi posarem el contingut.</p>
+<div class="alert alert-info">
+<p><strong>Pas 12. Crea objectes</strong>: A continuació crearem els objectes següents:</p>
+<pre><code>V &lt;- 6
+suma &lt;- 2 + 2
+Suma &lt;- 3 + 4 + 6 + 6
+V &lt;- 25 / 5</code></pre>
+<p>Comprova que aquests objectes s’han creat en el Global Environment:</p>
+<p><img src="img/objects.png" style="width:70.0%" /></p>
+</div>
+<p>En la creació d’objectes hi ha algunes <strong>regles bàsiques</strong> que cal tenir en compte:</p>
+<ul>
+<li>R distingeix entre majúscules (<code>Suma</code>) i minúscules (<code>suma</code>).</li>
+<li>Si guardem una operació (<code>3 + 4 + 6 + 6</code>) en un objecte, R ens guardarà només el resultat de l’operació (<code>19</code>).</li>
+<li>Si guardem un objecte amb el nom d’un objecte ja creat (<code>V</code>), R sobreescriurà l’antic objecte. Així, en la segona vegada que hem creat un objecte amb nom <code>V</code>, R ha sobreescrit el nou resultat.</li>
+</ul>
+</div>
+<div id="consulta-reproducció-i-eliminació-dobjectes" class="section level3 hasAnchor" number="1.6.2">
+<h3><span class="header-section-number">1.6.2</span> Consulta, reproducció i eliminació d’objectes<a href="objects.html#consulta-reproducció-i-eliminació-dobjectes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Amb els objectes podem fer quatre accions principals:</p>
+<ul>
+<li><strong>Consultar</strong> els objectes que hem creat teclejant <code>ls()</code>.</li>
+<li><strong>Reproduir</strong> el contingut d’un objecte teclejant-ne el nom seguit de Ctrl+Enter.</li>
+<li><strong>Eliminar</strong> els objectes del Global Environment utilitzant la funció <code>rm()</code>. Per exemple, <code>rm(Suma, V)</code> eliminarà els objectes <code>Suma</code> i <code>V</code> del Global Environment.</li>
+<li><strong>Eliminar tots</strong> els objectes utilitzant <code>rm(list = ls())</code>.</li>
+</ul>
+<div class="alert alert-info">
+<p><strong>Pas 13. Reprodueix objectes</strong>: Podem reproduir el contingut dels objectes que acabem de crear si situem el cursor a la línia de codi de l’<em>script</em> que conté el nom de l’objecte que volem reproduir i premem Ctrl+Enter.</p>
+<pre><code>suma
+Suma
+V</code></pre>
+<p>Recordem que, com hem vist anteriorment, també podem reproduir un objecte si el seleccionem a l’<em>script</em> i premem Ctrl+Enter.</p>
+<p><img src="img/command-select.png" style="width:70.0%" /></p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="8">
+<li id="fn8"><p>Amb Windows, també el podem crear amb la drecera de teclat Alt+-. Amb Mac, Option+-.<a href="objects.html#fnref8" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="r-script.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="import-files.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-guiarstudio.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["intro-r-cat.pdf", "intro-r-cat.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
