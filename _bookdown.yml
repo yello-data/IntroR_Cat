@@ -1,5 +1,10 @@
-book_filename: "bookdown-demo"
+book_filename: "intro-r-cat"
 language:
+  label:
+    fig: 'Figura '
+    tab: 'Taula '
+    exm: 'Exemple '
+    exr: 'Exercici '
   ui:
-    chapter_name: "Chapter "
+    chapter_name: "Capítol "
 delete_merged_file: true
